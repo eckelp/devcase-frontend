@@ -1,0 +1,36 @@
+<div class="ui-g ui-fluid">
+  <div class="ui-g-8 ui-g-offset-2 ui-md-offset-4 ui-md-4 text-center">
+    <h3 class="">DEVCASE - VSM</h3>
+  </div>
+</div>
+<form id="loginForm" [formGroup]="loginForm" (submit)="login()">
+  <div class="ui-g ui-fluid">
+    <div class="ui-g-8 ui-g-offset-2 ui-md-offset-4 ui-md-4">
+      <div class="ui-inputgroup">
+        <span class="ui-inputgroup-addon">
+          <i class="fa fa-user"></i>
+        </span>
+        <input type="text" pInputText placeholder="Login" formControlName="username" />
+      </div>
+      <app-form-message text="Login é obrigatório" *ngIf="isValid('username')"></app-form-message>
+    </div>
+  </div>
+
+  <div class="ui-g ui-fluid">
+    <div class="ui-g-8 ui-g-offset-2 ui-md-offset-4 ui-md-4">
+      <div class="ui-inputgroup">
+        <span class="ui-inputgroup-addon">
+          <i class="fa fa-lock"></i>
+        </span>
+        <input type="password" pInputText placeholder="Senha" formControlName="password" />
+      </div>
+      <app-form-message text="Senha é obrigatório" *ngIf="isValid('password')"></app-form-message>
+    </div>
+  </div>
+
+  <div class="ui-g ui-fluid">
+    <div class="ui-g-8 ui-g-offset-2 ui-md-offset-4 ui-md-4">
+      <button pButton type="button" label="Log In" (click)="doLogin()" [disabled]="!loginForm.valid"></button>
+    </div>
+  </div>
+</form>

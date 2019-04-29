@@ -26,9 +26,17 @@
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/nova-light/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/brands.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/solid.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/regular.min.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

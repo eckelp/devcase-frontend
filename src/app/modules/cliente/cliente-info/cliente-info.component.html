@@ -1,0 +1,50 @@
+<div class="mt-3 ">
+  <a [routerLink]="[ '/clientes']" pButton class="ui-button-info" icon="pi pi-bars" iconPos="left" label="Lista"></a>
+</div>
+<div class="row mt-3">
+  <div class="col-6">
+    <p class="bold no-margin">Nome</p>
+    {{cliente.nome}}
+  </div>
+  <div class="col-3">
+    <p class="bold no-margin">Data de Nascimento</p>
+    {{cliente.dataNascimento}}
+  </div>
+  <div class="col-2">
+    <h6 class="bold">Pontos: {{cliente.pontuacaoTotal}}</h6>
+  </div>
+</div>
+<div class="row mt-3">
+  <div class="col-3">
+    <p class="bold no-margin">RG</p>
+    {{cliente.rg}}
+  </div>
+  <div class="col-3">
+    <p class="bold no-margin">CPF</p>
+    {{cliente.cpf}}
+  </div>
+  <div class="col-3">
+    <p class="bold no-margin">Sexo</p>
+    {{cliente.sexo}}
+  </div>
+  <div class="col-3">
+    <p class="bold no-margin">Endereço</p>
+    {{cliente.endereco.logradouro + ", " + cliente.endereco.numeral + " - " + cliente.endereco.cidade.nome}}
+  </div>
+</div>
+<div class="row mt-3">
+  <div class="col-12">
+    <p class="bold no-margin">Telefones</p>
+    <ul class="list-unstyled">
+      <li *ngFor="let telefone of cliente.telefones">{{telefone.telefone + " - " + telefone.tipoContato}}</li>
+    </ul>
+  </div>
+</div>
+<div class="row mt-3">
+  <div class="col-12">
+    <p class="bold no-margin">E-mails</p>
+    <ul class="list-unstyled">
+      <li *ngFor="let email of cliente.emails">{{email.email + " - " + email.tipoContato}}</li>
+    </ul>
+  </div>
+</div>

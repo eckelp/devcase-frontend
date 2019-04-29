@@ -1,0 +1,32 @@
+<div class="mt-3 ml-2">
+  <a [routerLink]="[ '/pontuacoes']" pButton class="ui-button-info" icon="pi pi-bars" iconPos="left" label="Lista">
+
+  </a>
+</div>
+<div class="mt-3">
+  <h5>{{title}}</h5>
+</div>
+<div class="mt-3">
+  <form id="pontuacaoForm" [formGroup]="pontuacaoForm" (submit)="salvar()">
+    <div class="row">
+      <div class="col-12 col-sm-6 form-group">
+        <input type="number" class="form-control" placeholder="Valor Mínimo" formControlName="valorMinimo" />
+        <app-form-message text="Valor mínimo é obrigatório" *ngIf="isValid('valorMinimo')"></app-form-message>
+      </div>
+      <div class="col-12 col-sm-6 form-group">
+        <input type="number" class="form-control" placeholder="Valor Máximo" formControlName="valorMaximo" />
+        <app-form-message text="Valor máximo é obrigatório" *ngIf="isValid('valorMaximo')"></app-form-message>
+      </div>
+      <div class="col-12 col-sm-6 form-group">
+        <input type="number" class="form-control" placeholder="Pontos" formControlName="pontos" />
+        <app-form-message text="Pontos é obrigatório" *ngIf="isValid('pontos')"></app-form-message>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-12">
+        <button pButton type="submit" label="Salvar" [disabled]="!pontuacaoForm.valid" class="ui-button-success" icon="pi pi-check"></button>
+      </div>
+    </div>
+  </form>
+</div>
